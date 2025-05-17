@@ -5,11 +5,11 @@ from sentence_transformers import SentenceTransformer
 import os
 
 # ==== CONFIG ====
-ARXIV_FILE = r'C:\Users\jnk47\Documents\datasets\arxiv_physics_subset.json'   # Your filtered file
-INDEX_FILE = 'physics_faiss.index'         # Where to save FAISS index
-EMBEDDINGS_FILE = 'physics_embeddings.npy' # Optional: Save numpy matrix
-META_FILE = 'physics_metadata.json'        # Save metadata (titles/abstracts)
-MODEL_NAME = 'all-MiniLM-L6-v2'            # Fast and GPU-friendly
+ARXIV_FILE = 'datasets\arxiv_physics_subset.json'  
+INDEX_FILE = 'physics_faiss.index'         
+EMBEDDINGS_FILE = 'physics_embeddings.npy' 
+META_FILE = 'physics_metadata.json'        
+MODEL_NAME = 'all-MiniLM-L6-v2'            
 
 # ==== LOAD DATA ====
 with open(ARXIV_FILE, 'r') as f:
@@ -35,5 +35,3 @@ np.save(EMBEDDINGS_FILE, embeddings)
 
 with open(META_FILE, 'w') as f:
     json.dump(papers, f, indent=2)
-
-print("✅ FAISS index and metadata saved successfully!")
