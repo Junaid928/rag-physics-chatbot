@@ -12,7 +12,7 @@ INDEX_FILE = 'physics_faiss.index'
 META_FILE = 'physics_metadata.json'
 EMBED_MODEL_NAME = 'all-MiniLM-L6-v2'
 
-LLM_MODEL_PATH = r'C:\Users\jnk47\Documents\models\mistral-7b-instruct-v0.1.Q4_K_M.gguf'
+LLM_MODEL_PATH = 'models\mistral-7b-instruct-v0.1.Q4_K_M.gguf'
 N_CTX = 4096
 N_GPU_LAYERS = 32
 TOP_K = 3
