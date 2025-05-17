@@ -10,8 +10,8 @@ def is_physics_category(categories):
     return any(cat.startswith(tuple(physics_prefixes)) for cat in categories.split())
 
 # Paths
-input_path = r"C:\Users\jnk47\Documents\datasets\arxiv-metadata-oai-snapshot.json"
-output_path = r"C:\Users\jnk47\Documents\datasets\arxiv_physics_subset.json"
+input_path = "datasets\arxiv-metadata-oai-snapshot.json"
+output_path = "datasets\arxiv_physics_subset.json"
 
 # Set how many entries to extract (adjust as needed)
 MAX_ENTRIES = 10000
