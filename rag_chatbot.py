@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(page_title="Physics RAG Chatbot", page_icon="🧪")
+st.set_page_config(page_title="Physics RAG Chatbot")
 
 import json
 import numpy as np
@@ -83,10 +83,10 @@ def generate_answer(prompt):
         yield token
 
 # ==== STREAMLIT UI ====
-st.title("🔬 Physics RAG Chatbot")
+st.title("Physics RAG Chatbot")
 st.markdown("Ask a physics question based on research paper summaries.")
 
-user_query = st.text_input("🧑‍💻 Your question:", key="input")
+user_query = st.text_input("Your question:", key="input")
 
 if st.button("Ask"):
     if user_query.strip() == "":
@@ -99,14 +99,14 @@ if st.button("Ask"):
             st.error("No relevant documents found.")
         else:
             prompt = build_prompt(user_query, docs)
-            st.markdown("### 🤖 Answer:")
+            st.markdown("### Answer:")
             response_placeholder = st.empty()
             response_text = ""
             for token in generate_answer(prompt):
                 response_text += token
                 response_placeholder.markdown(response_text)
 
-            st.markdown("### 📄 Referred Papers:")
+            st.markdown("### Referred Papers:")
             for i, doc in enumerate(docs, 1):
                 with st.expander(f"Paper {i}: {doc['title']}"):
                     st.markdown(f"**Title:** {doc['title']}")
